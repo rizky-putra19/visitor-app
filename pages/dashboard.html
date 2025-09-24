@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="../assets/logo.png" height="100" />
+        <button id="logoutBtn">Logout</button>
+    </header>
+
+    <aside>
+        <ul>
+            <li><a href="#" onclick="loadPage('checkin.html')">Check-In</a></li>
+            <li><a href="#" onclick="loadPage('checkout.html')">Check-Out</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>Selamat Datang di Dashboard Visitor Management</h1>
+    </main>
+
+    <script>
+        async function loadPage(page) {
+            fetch(page)
+                .then(res => res.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const content = doc.body.innerHTML;
+                    document.querySelector('main').innerHTML = content;
+
+                    // Hapus semua script lama
+                    document.querySelectorAll(".page-script").forEach(s => s.remove());
+
+                    // Inject script baru (kalau ada)
+                    doc.querySelectorAll("script").forEach(oldScript => {
+                        const newScript = document.createElement("script");
+                        if (oldScript.src) {
+                            newScript.src = oldScript.src;
+                        } else {
+                            newScript.textContent = oldScript.textContent;
+                        }
+                        newScript.classList.add("page-script");
+                        document.body.appendChild(newScript);
+                    });
+                })
+                .catch(err => console.error("Error load page:", err));
+
+            // Logout
+            const logoutBtn = document.getElementById("logoutBtn");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", () => {
+                    window.location.href = "login.html";
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

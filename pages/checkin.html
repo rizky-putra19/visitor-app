@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visitor Check-In</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <h1>Visitor Check-In</h1>
+
+  <form id="checkinForm">
+    <label for="name">Nama:</label><br />
+    <input type="text" id="name" name="name" required /><br /><br />
+
+    <label for="nik">NIK:</label><br />
+    <input type="text" id="nik" name="nik" required /><br /><br />
+
+    <div class="camera-container">
+      <video id="camera" autoplay playsinline width="320" height="240"></video>
+      <canvas id="snapshot" width="320" height="240" style="display:none;"></canvas>
+    </div>
+    <br />
+
+    <button type="button" id="takePhoto">📸 Ambil Foto</button>
+    <button type="submit">✅ Check-In</button>
+  </form>
+
+  <!-- Logic kamera & checkin -->
+  <script src="../renderer/checkin.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body Layout */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f5f6fa;
+}
+
+/* Header / Topbar */
+header {
+  height: 60px;
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+header img {
+  height: 50px;
+}
+
+header button {
+  background: #e74c3c;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+header button:hover {
+  background: #c0392b;
+}
+
+/* Sidebar */
+aside {
+  width: 220px;
+  background: #34495e;
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+}
+
+aside ul {
+  list-style: none;
+}
+
+aside ul li {
+  margin: 15px 0;
+}
+
+aside ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.2s;
+}
+
+aside ul li a:hover {
+  background: #2c3e50;
+}
+
+/* Main Content */
+main {
+  margin-left: 220px;
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Login Page */
+.login-container {
+  width: 350px;
+  margin: auto;
+  margin-top: 10%;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #2ecc71;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #27ae60;
+}
+
+#loginMsg {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+/* Form Styles */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+form input, form button {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+form button {
+  background: #2980b9;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #1f6391;
+}
+
+/* Messages */
+#checkinMsg, #checkoutResult {
+  margin-top: 15px;
+  padding: 10px;
+  background: #ecf0f1;
+  border-radius: 4px;
+}
