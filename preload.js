@@ -5,4 +5,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
   checkinVisitor: (visitor) => ipcRenderer.invoke("checkinVisitor", visitor),
   searchVisitor: (name) => ipcRenderer.invoke("searchVisitor", name),
   checkoutVisitor: (id) => ipcRenderer.invoke("checkoutVisitor", id),
+  visitorList: (start, end) => ipcRenderer.invoke("visitorList", {start, end})
 });

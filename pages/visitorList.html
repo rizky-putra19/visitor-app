@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Laporan Pengunjung</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #f4f4f4; }
+    img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; }
+    .filter { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h2>Laporan Pengunjung</h2>
+  
+  <div class="filter">
+    <label>Dari: <input type="date" id="startDate"></label>
+    <label>Sampai: <input type="date" id="endDate"></label>
+    <button id="filterBtn">Tampilkan</button>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>NIK</th>
+        <th>Foto</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+      </tr>
+    </thead>
+    <tbody id="reportTableBody"></tbody>
+  </table>
+
+  <script src="../renderer/visitorList.js"></script>
+</body>
+</html>

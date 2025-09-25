@@ -20,6 +20,8 @@ form.addEventListener("submit", async (e) => {
     <p><b>Nama:</b> ${visitor.name}</p>
     <p><b>NIK:</b> ${visitor.nik}</p>
     <img src="${visitor.photo}" width="200" />
+    <p><b>Jam Masuk:</b> ${visitor.checkin_time}</p>
+    <p><b>Jam Keluar:</b> ${visitor.checkout_time}</p>
     <br/><br/>
     <button id="checkoutBtn">✅ Check-Out</button>
   `;
@@ -31,8 +33,8 @@ form.addEventListener("submit", async (e) => {
     if (res) {
       resultDiv.innerHTML = `
         <p style="color:green;">✔️ Checkout berhasil untuk ${visitor.name}</p>
-        <p>Waktu Checkout: ${res.checkout_time}</p>
-      `;
+        <p><b>Jam Masuk:</b> ${visitor.checkin_time}</p>
+        <p><b>Jam Keluar:</b> ${res.checkout_time}</p>`;
     }
   });
 });

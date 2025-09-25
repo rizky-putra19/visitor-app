@@ -1,6 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
-const { searchVisitor, checkoutVisitor, checkinVisitor } = require("./src/services/visitorService");
+const { searchVisitor, checkoutVisitor, checkinVisitor, visitorList } = require("./src/services/visitorService");
 const { loginUser } = require("./src/services/userService");
 
 app.commandLine.appendSwitch("enable-logging");
@@ -43,4 +43,8 @@ ipcMain.handle("searchVisitor", async (event, name) => {
 
 ipcMain.handle("checkoutVisitor", async (event, id) => {
     return await checkoutVisitor(id);
+});
+
+ipcMain.handle("visitorList", async (event, {start, end}) => {
+    return await visitorList(start, end);
 });
